@@ -48,7 +48,7 @@ def call_groq(path, key, body=None):
 def validate_key():
     """Validate the token in 3 steps and return (key, model)."""
     # Step 1: the key must come from the environment, not the code
-    key = os.environ.get("GROQ_API_KEY")
+    GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
     if not key:
         sys.exit("❌ Step 1: GROQ_API_KEY not set.\n   Run: export GROQ_API_KEY='gsk_...'")
     print("🔐 Step 1: Is the key set?               ✅")
